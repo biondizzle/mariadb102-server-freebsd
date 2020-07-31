@@ -4,19 +4,16 @@
 
 FreeBSD deprecated mariadb102-serve and it just so happens to be the one that works best for me. This is the latest 10.02 revision straight from FreeBSD Ports SVN.
 
-## Quick Install
+## Install - Use all default values when prompted
 ```
+portsnap fetch
+portsnap extract
+portsnap update
+cd /usr/ports/databases/
 git clone https://github.com/biondizzle/mariadb102-server-freebsd.git
-cd mariadb102-server-freebsd
+git clone https://github.com/biondizzle/mariadb102-client-freebsd.git
+mv mariadb102-server-freebsd mariadb102-server
+mv mariadb102-client-freebsd mariadb102-client
+cd mariadb102-server
 make install clean
 ```
-
-## Advanced Install
-```
-git clone https://github.com/biondizzle/mariadb102-server-freebsd.git
-cd mariadb102-server-freebsd
-make config
-make showconfig
-make install clean
-```
-
